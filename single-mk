@@ -9,7 +9,7 @@ CFLAGS += -I src -I lib -I include -I ../../libcgc -fno-builtin -nostdlib -nodef
 # old filters: -Wno-int-to-pointer-cast -Wno-pointer-to-int-cast -Wno-enum-compare -Wno-logical-not-parentheses -Wno-strict-aliasing
 CXXFLAGS += $(CFLAGS) -fpermissive
 MACHINE ?= x86_64-linux-gnu
-CC=$(MACHINE)-gcc
+CC ?= $(MACHINE)-gcc
 BINDIR = ../../bins/$(MACHINE)
 BINNAME = $(AUTHOR_ID)_$(SERVICE_ID)
 BINPATH = $(BINDIR)/$(BINNAME)
