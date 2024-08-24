@@ -77,9 +77,9 @@ static void __attribute__ ((constructor)) cgc_initialize_flag_page(void) {
   random(mmap_addr, 0x1000, NULL);
 }
 
-int main();
+int main(int _formal_argc, char **_formal_argv, char **_formal_envp);
 void _start()
 {
 	cgc_initialize_flag_page();
-	_terminate(main());
+	_terminate(main(0, 0, 0));
 }
