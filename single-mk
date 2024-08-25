@@ -5,9 +5,9 @@ OBJECTS = $(OBJECTSCC:.c=.o)
 CFLAGS:=$(filter-out -Werror,$(CFLAGS))
 CFLAGS:=$(filter-out -Oz,$(CFLAGS))
 CFLAGS:=$(filter-out -mno-sse,$(CFLAGS))
-CFLAGS += -I src -I lib -I include -I ../../libcgc -fno-builtin -nostdlib -nodefaultlibs -nostartfiles
+CFLAGS += -I src -I lib -I include -I ../../libcgc -fno-builtin -nostdlib -nodefaultlibs -nostartfiles -fpermissive
 # old filters: -Wno-int-to-pointer-cast -Wno-pointer-to-int-cast -Wno-enum-compare -Wno-logical-not-parentheses -Wno-strict-aliasing
-CXXFLAGS += $(CFLAGS) -fpermissive
+CXXFLAGS += $(CFLAGS)
 MACHINE ?= x86_64-linux-gnu
 CC ?= $(MACHINE)-gcc
 BINDIR = ../../bins/$(MACHINE)

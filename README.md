@@ -8,6 +8,6 @@ It is loosely based on TrailOfBits' cb-multios.
 ```bash
 cd cgc-multiarch
 bash clone.sh
-cd cgc-challenge-corpus && git apply ../corpus.diff
+cd cgc-challenge-corpus && git apply ../corpus.diff && cd ..
 make
 ```

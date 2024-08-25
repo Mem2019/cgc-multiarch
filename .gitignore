@@ -1,1 +1,3 @@
 *.o
+bins/*
+cgc-challenge-corpus/
