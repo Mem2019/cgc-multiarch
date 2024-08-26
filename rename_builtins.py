@@ -6,7 +6,7 @@ builtin_names = ["memcpy", "memmove", "memset", "memcmp", "memchr",
 	"strlen", "strcpy", "strncpy", "strchr", "strsep", "strcmp",
 	"strncmp", "strcasecmp", "strncasecmp", "strcat", "strdup",
 	"fdprintf", "sprintf", "strtol", "strtoul", "malloc", "calloc",
-	"realloc", "free", "malloc_size", "exit"]
+	"realloc", "free", "malloc_size", "exit", "main"]
 builtin_defs = []
 for bn in builtin_names:
 	builtin_defs.append((bn.encode(),
@@ -26,7 +26,7 @@ def replace_builtins(code_dir: str):
 			with open(file_path, 'rb') as fd:
 				gather_builtin_defs(fd.read(), defined)
 
-	print(code_dir, defined)
+	print(code_dir, b' '.join(defined).decode())
 	for dirpath, _, filenames in os.walk(code_dir):
 		for filename in filenames:
 			file_path = os.path.join(dirpath, filename)
